@@ -1,0 +1,138 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: var(--navbar-bg);
+  color: var(--navbar-text);
+  padding: 16px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-shadow: 0 4px 10px rgba(18, 65, 145, 0.5);
+  z-index: 10000;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.navbar-logo {
+  font-weight: 700;
+  font-size: 1.8rem;
+  letter-spacing: 1.2px;
+  color: var(--navbar-text);
+}
+
+.navbar-menu {
+  list-style: none;
+  display: flex;
+  gap: 28px;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-menu li a {
+  color: var(--navbar-link);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.navbar-menu li a:hover {
+  color: var(--navbar-link-hover);
+}
+
+.active-link {
+  color: var(--navbar-text);
+  font-weight: 700;
+  border-bottom: 2px solid var(--navbar-active-border);
+  padding-bottom: 4px;
+}
+
+.emoji-toggle input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggle-label {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: #ccc;
+  border-radius: 34px;
+  cursor: pointer;
+  position: relative;
+  transition: background-color 0.3s ease;
+}
+
+.slider-icon {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 20px;
+  height: 20px;
+  transition: transform 0.4s ease;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sun,
+.moon {
+  position: absolute;
+  transition: opacity 0.4s ease;
+}
+
+.sun {
+  opacity: 1;
+}
+
+.moon {
+  opacity: 0;
+}
+
+.emoji-toggle input:checked+.toggle-label {
+  background-color: #124191;
+}
+
+.emoji-toggle input:checked+.toggle-label .slider-icon {
+  transform: translateX(24px);
+}
+
+.emoji-toggle input:checked+.toggle-label .sun {
+  opacity: 0;
+}
+
+.emoji-toggle input:checked+.toggle-label .moon {
+  opacity: 1;
+}
+
+.navbar-menu li {
+  display: flex;
+  align-items: center;
+}
+
+.emoji-toggle {
+  position: relative;
+  width: 50px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.light-mode .toggle-label {
+  background-color: #2c5bb6;
+}
+
+.dark-mode .toggle-label {
+  background-color: #124191;
+}
+
+.slider-icon span {
+  font-size: 1rem;
+  display: block;
+  line-height: 1;
+}

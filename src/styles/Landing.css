@@ -1,0 +1,55 @@
+.landing-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 95vh;
+    background: var(--landing-bg-gradient);
+    position: relative;
+    text-align: center;
+    padding: 40px 20px;
+    transition: background 0.4s ease;
+}
+
+.landing-content {
+    z-index: 2;
+}
+
+.hero-title {
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--hero-title-color);
+    margin-bottom: 20px;
+    transition: color 0.3s ease;
+}
+
+.hero-subtitle {
+    font-size: 1.3rem;
+    color: var(--hero-subtitle-color);
+    max-width: 700px;
+    margin: 0 auto 30px;
+    transition: color 0.3s ease;
+}
+
+.get-started-btn {
+    background-color: var(--button-bg);
+    color: var(--button-text-color);
+    border: none;
+    padding: 12px 24px;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.get-started-btn:hover {
+    background-color: var(--button-hover-bg);
+}
+
+.svg-wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+}

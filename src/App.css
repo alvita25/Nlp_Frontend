@@ -1,38 +1,148 @@
+.light-mode {
+  --bg-color: #f5f5f5;
+  --card-color: #ffffff;
+  --light-card: #f5f5f5;
+  --people-bg: #e3eaf9;
+  --text-color: #124191;
+  --heading-color: #0f2c6d;
+  --accent-color: #124191;
+  --border-color: #e5dada;
+  --chat-bg: #f5f5f5;
+  --bot-bg: #dbe9ff;
+  --user-bg: #124191;
+  --user-text: #ffffff;
+  --input-border: #dbe9ff;
+  --input-focus: #124191;
+  --button-hover: #0e2c70;
+
+
+  --card-bg: #f7f7f7;
+
+  --heading-color: #0f2c6d;
+  --code-bg: #e1e4eb;
+  --shadow-color: rgba(0, 0, 0, 0.08);
+  --border-accent: #124191;
+
+  --landing-bg-gradient: linear-gradient(to bottom, #f2f2f2, #ffffff);
+  --hero-title-color: #124191;
+  --hero-subtitle-color: #333;
+  --button-bg: #124191;
+  --button-hover-bg: #0d2e68;
+  --button-text-color: #ffffff;
+
+  --navbar-bg: #124191;
+  --navbar-text: #ffffff;
+  --navbar-link: #dbe9ff;
+  --navbar-link-hover: #ffffff;
+  --navbar-active-border: #ffffff;
+  --scrollbar-bg: transparent;
+  --scrollbar-thumb: rgba(18, 65, 145, 0.3);
+  --scrollbar-thumb-hover: rgba(18, 65, 145, 0.5);
+
+  --chatbot-button-bg: #124191;
+  --chatbot-button-hover: #0d2e6c;
+  --chatbot-button-bg-lightmode: #3a5bbf;
+  --chatbot-button-hover-lightmode: #2a3e8c;
+
+
+}
+
+.dark-mode {
+  --bg-color: #1c1c1c;
+  --card-color: #2a2a2a;
+  --light-card: #2a2a2a;
+  --people-bg: #1e2638;
+  --text-color: #eaeaea;
+  --heading-color: #a4c5ff;
+  --accent-color: #90c2ff;
+  --border-color: #3b4d6e;
+  --chat-bg: #2a2a2a;
+  --bot-bg: #3a3f50;
+  --user-bg: #124191;
+  --user-text: #ffffff;
+  --input-border: #3f4f70;
+  --input-focus: #4a90e2;
+  --button-hover: #0e2c70;
+
+
+  --card-bg: #2a2a2a;
+
+  --heading-color: #e1e8ff;
+  --code-bg: #3c3f4f;
+  --shadow-color: rgba(0, 0, 0, 0.4);
+  --border-accent: #4a90e2;
+
+  --landing-bg-gradient: linear-gradient(to bottom, #1e1e1e, #121212);
+  --hero-title-color: #a1c4ff;
+  --hero-subtitle-color: #cccccc;
+  --button-bg: #1a4ba0;
+  --button-hover-bg: #113578;
+  --button-text-color: #ffffff;
+
+  --navbar-bg: #0d1c40;
+  --navbar-text: #ffffff;
+  --navbar-link: #a6c8ff;
+  --navbar-link-hover: #ffffff;
+  --navbar-active-border: #ffffff;
+  --scrollbar-bg: transparent;
+  --scrollbar-thumb: rgba(255, 255, 255, 0.2);
+  --scrollbar-thumb-hover: rgba(255, 255, 255, 0.35);
+
+  --chatbot-button-bg: #a1c4fd;
+  --chatbot-button-hover: #799edb;
+}
+
+body,
+html,
+#root,
 .App {
-  text-align: center;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background 0.3s, color 0.3s;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.theme-switch {
+  position: relative;
+  display: inline-block;
+  width: 45px;
+  height: 22px;
+  margin-left: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.theme-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.slider {
+  position: absolute;
+  cursor: pointer;
+  background-color: #ccc;
+  border-radius: 34px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: 0.4s;
 }
 
-.App-link {
-  color: #61dafb;
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 4px;
+  bottom: 3px;
+  background-color: white;
+  border-radius: 50%;
+  transition: 0.4s;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+input:checked+.slider {
+  background-color: #124191;
+}
+
+input:checked+.slider:before {
+  transform: translateX(22px);
 }
