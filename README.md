@@ -70,4 +70,32 @@ See the [Create React App documentation](https://facebook.github.io/create-react
 - `VLAN = 100, PBIT =5`
 - ...and more
 
+## API Access and Backend Integration
+To integrate the frontend with your backend API, you need to configure the API endpoint used for chatbot interactions. The API endpoint is located in the handleSend function inside the file:
+`src/components/Chatbot.js`
+``` javascript
+const response = await fetch(" http://127.0.0.1:5000/api/chatbot", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ message: input }),
+      });
+```
+### How to Change the API Endpoint
+- Open `src/components/Chatbot.js`
+- Locate the handleSend function (line 24)
+- Update the fetch URL to match your backend deployment, for example:
+  For local development: `http://127.0.0.1:5000/api/chatbot`
+- For production: `https://your-backend-domain.com/api/chatbot`
+- Save the file and restart your frontend server if necessary
+
+## Screenshots
+
+![Home Page](https://github.com/user-attachments/assets/a952804d-819b-4054-89f4-871b64339ee5)
+![Chatbot Page](https://github.com/user-attachments/assets/30236ff3-68c2-4c80-9c38-ae7102e316ce)
+![Chatbot Page(Dark mode)](https://github.com/user-attachments/assets/c071373e-94c0-43af-9744-de1b8f14dffb)
+![Demo Page](https://github.com/user-attachments/assets/43a11556-6255-4e8f-9b92-0795018ed92e)
+![About Page](https://github.com/user-attachments/assets/31cd90b0-70ab-4926-b657-e9865b3a60b3)
+
+
+
 
