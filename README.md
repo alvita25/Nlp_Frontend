@@ -60,15 +60,15 @@ See the [Create React App documentation](https://facebook.github.io/create-react
 
 - `Configure DUT with User Side VSI with VLAN 100 on Line1`
 - `Configure DUT with Network Side VSI with VLAN 200 on Uplink1`
+
+### Example Outputs
+- `Entity1 = DUT`
+- `Entity1 Keywords =`
+- `UserVSI-1 = VLAN=100, PBIT=0`
+- `UserVSI-1 Parent = Line1`
+- `NetworkVSI-1 = VLAN=200, PBIT=0`
 - `NetworkVSI-1 Parent = Uplink1`
 - `Forwarder = N:1`
-- `Test Eqpt - Upstream`
-- `Entity2 = User Side Traffic Eqpt`
-- `NumPackets To Generate = 100`
-- `Src MAC = 99:02:03:04:05:06`
-- `Dst MAC = 98:0A:0B:0C:0D:0E`
-- `VLAN = 100, PBIT =5`
-- ...and more
 
 ## API Access and Backend Integration
 To integrate the frontend with your backend API, you need to configure the API endpoint used for chatbot interactions. The API endpoint is located in the handleSend function inside the file:
